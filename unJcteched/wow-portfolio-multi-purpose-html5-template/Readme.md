@@ -12,9 +12,9 @@
 
 - use pipenv install so that the dependencies and pelican 4.7.1 is installed as well as invoke markdown and livereload
 
-- I plan to do some python scripting to poplulate each fo the folders with the pelcan simple theme template files.
+- I plan to do some python scripting to populate each fo the folders with the pelcan simple theme template files.
 
 
 
-
+-  please log here which theme you have started and finished converting
 
