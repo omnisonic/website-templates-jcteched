@@ -4,6 +4,10 @@ SITEURL = ''
 
 PATH = 'content'
 
+OUTPUT_PATH = 'css3-seascape-output/'
+
+THEME = 'css3-seascape'
+
 TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = 'en'

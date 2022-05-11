@@ -20,7 +20,7 @@
 
 - please also move the theme to the jcteched folder when converted
 
-- when you run pelican make  a new folder for the output and change the OUTPUT in pelicanconf to match that folder.  I might want to put this output into the them folder as well but I am not sure depend on if we can publish to amplify that way or not.
+- OUTPUT_PATH = '<the_theme_name_here>' in pelicanconf to match the theme name.  pelican will create a new folder for the output by that name.  I might want to put this output into the theme folder as well but I am not sure depend on if we can publish to amplify that way or not.
 
 
 
