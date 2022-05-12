@@ -7,7 +7,7 @@
   <meta charset="utf-8" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta name="generator" content="Pelican" />
-  <link rel="stylesheet" type="text/css" href="theme/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
 
   {% endblock head %}
 </head>
@@ -26,10 +26,12 @@
 
       <nav>
         <ul class="sf-menu" id="nav">
-          <li class="selected"><a href="index.html">Home</a></li>
-          <li><a href="examples.html">Examples</a></li>
-          <li><a href="page.html">A Page</a></li>
-          <li><a href="another_page.html">Another Page</a></li>
+          <li class="selected"><a href="/index.html">Home</a></li>
+          {% if DISPLAY_PAGES_ON_MENU %}
+          {% for p in pages %}
+          <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+          {% endfor %}
+        {% endif %}
           <li><a href="#">Example Drop Down</a>
             <ul>
               <li><a href="#">Drop Down One</a></li>
@@ -47,7 +49,7 @@
               <li><a href="#">Drop Down Five</a></li>
             </ul>
           </li>
-          <li><a href="contact.php">Contact Us</a></li>
+
         </ul>
       </nav>
     </header>
@@ -58,6 +60,8 @@
 
 
       <div class="content">
+
+        {% block content %}
         <h1>Welcome to the CSS3_seascape template</h1>
         <p>This simple, fixed width website template is released under a <a
             href="http://creativecommons.org/licenses/by/3.0">Creative Commons Attribution 3.0 Licence</a>. This means
@@ -69,6 +73,8 @@
         <p>This template is a fully documented 5 page website, with an <a href="examples.html">examples</a> page that
           gives examples of all the styles available with this design. There is also a working PHP contact form on the
           contact page. All of the photos were taken by me - use as you wish.</p>
+
+          {% endblock content %}
       </div>
     </div>
     <footer>
@@ -78,10 +84,10 @@
   </div>
   <p>&nbsp;</p>
   <!-- javascript at the bottom for fast page loading -->
-  <script type="text/javascript" src="theme/js/jquery.js"></script>
-  <script type="text/javascript" src="theme/js/jquery.easing-sooper.js"></script>
-  <script type="text/javascript" src="theme/js/jquery.sooperfish.js"></script>
-  <script type="text/javascript" src="theme/js/image_fade.js"></script>
+  <script type="text/javascript" src="/theme/js/jquery.js"></script>
+  <script type="text/javascript" src="/theme/js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="/theme/js/jquery.sooperfish.js"></script>
+  <script type="text/javascript" src="/theme/js/image_fade.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
       $('ul.sf-menu').sooperfish();
